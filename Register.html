@@ -1,0 +1,164 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />    
+
+<div class="container">
+     <div class="left">
+        <div class="top-left">
+          <span class="logo">QWERTY</span>
+          <p>An amazing platform for people to find each other and collaborate anywhere, anytime.</p>
+        </div>
+     </div>
+     <div class="right">
+       <div class="form-top">
+         <span class="small-text">START FOR FREE</span>
+         <h1>Sign up to <span class="logo">QWERTY</span></h1>
+         <small>Already a memeber? <a href="login.html">login</a></small>
+       </div>
+       <form>
+         <label for="e-mail">E-mail</label>
+         <input type="email" name="e-mail" placeholder="name@mail.com">
+         <label for="password">Password</label>
+         <input type="password" name="password" placeholder="6+ characters, 1 Capital letter">
+         <button class="btn" id="create-account">Create Account</button>
+         <button class="btn" id="google-btn">
+          <img src="https://images.pexels.com/photos/1533720/pexels-photo-1533720.jpeg?cs=srgb&dl=pexels-matt-hardy-1533720.jpg&fm=jpg" alt=""> 
+          Sign up with Google</button>
+       </form>
+       <div class="captcha">
+         <p>This site is protected bt CAPTCHA and the Google <a href="#">Privacy Policy</a> and <a href="#">Terms of Service</a> apply</p>
+       </div>
+     </div>
+  </div>
+  <style>
+  @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #333;
+  margin: 0;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  max-width: 900px;
+  margin: 100px auto;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  height: 700px;
+}
+
+.left,
+.right {
+  width: 50%;
+  padding: 30px;
+  height: 100%;
+}
+.left {
+  background: url("https://don16obqbay2c.cloudfront.net/wp-content/uploads/how-to-sell-a-video-course-_Sell-1659607957.png") rgba(255, 99, 99, 0.05);
+
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80%;
+}
+.top-left p {
+  opacity: 0.6;
+  font-size: 12px;
+  max-width: 80%;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: #ff6363;
+}
+.right {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+.right form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.form-top {
+  margin: 0 0 30px 0;
+}
+
+.form-top .small-text,
+.form-top small {
+  opacity: 0.6;
+  font-weight: 700;
+  padding: 0;
+  margin: 0;
+}
+
+.right form label {
+  opacity: 0.6;
+  font-weight: 600;
+  padding: 20px 0 10px 0;
+}
+
+.right form input {
+  width: 100%;
+  padding: 20px 10px;
+  border-radius: 5px;
+  border: solid 0.5px grey;
+}
+.right form input::placeholder {
+  font-size: 16px;
+  padding: 5px;
+}
+.right form button {
+  width: 100%;
+  padding: 20px;
+  border-radius: 5px;
+  border: 0;
+  margin: 5px 0;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+#create-account {
+  margin-top: 50px;
+  background: #ff6363;
+  color: #fff;
+}
+
+#google-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 0.5px solid grey;
+  color: rgba(0, 0, 0, 0.6);
+}
+#google-btn img {
+  max-width: 18px;
+  margin: 0 5px 0 0;
+}
+a {
+  text-decoration: none;
+  font-weight: 900;
+  color: #ff6363;
+}
+
+.captcha {
+  font-size: 12px;
+
+  position: absolute;
+  bottom: 10px;
+  padding: 0 30px 0 0;
+}
+
+  </style>

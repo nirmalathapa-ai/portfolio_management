@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Marketplace</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles -->
+    <style>
+        body {
+            padding-top: 80px; /* Adjust the height of the navbar */
+            background-color: #7DFDFE;
+            margin-bottom: 200px; /* Move the whole content down by 200px */
+        }
+
+        .navbar {
+            background-color: #7DFDFE;
+        }
+
+        .navbar-brand img {
+            max-width: 40px;
+            border-radius: 50%;
+        }
+
+        .navbar-nav .nav-link {
+            color: #000000;
+            border-bottom: 2px solid transparent;
+            transition: border-bottom 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            border-bottom: 2px solid #000000;
+        }
+
+        .navbar-toggler-icon {
+            background-color: #000000;
+        }
+
+        .navbar-dark .navbar-toggler:focus,
+        .navbar-dark .navbar-toggler-icon:focus {
+            outline: none;
+            box-shadow: none;
+        }
+
+        .navbar-nav.ml-auto {
+            flex-direction: row;
+            justify-content: center;
+        }
+
+        .navbar-nav .nav-item {
+            margin-right: 15px;
+        }
+
+        @media (min-width: 768px) {
+            .navbar-nav.ml-auto {
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+        }
+
+        /* Additional Styles */
+        .course-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .course-info {
+            padding: 80px;
+			font-size:30px;
+			font-family:penna;
+        }
+
+        .course-buttons {
+            margin-top: 20px;
+        }
+
+        /* New Section Styles */
+        .second-section {
+            background-color:#54B4D3; 
+            padding: 200px;
+            margin-top: 200px; /* Move the second section down by 200px */
+        }
+
+        .second-section h2 {
+            color: #000; /* Black text color */
+            margin-top: 20px;
+        }
+
+        .text-container {
+            padding: 20px;
+            background-color: ; /* White background for text container */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-container img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            display: block;
+        }
+		
+		.text-container h2 {
+    font-weight: bold;
+}
+
+h5 {
+    color: #FF0000;
+}
+
+
+/* Third Section Styles */
+.third-section {
+    background-color: #999999; /* Adjust the background color as needed */
+    padding: 50px; /* Adjust the padding as needed */
+    margin-top: 60px; /* Move the third section down by 50px */
+}
+
+
+.fourth-section {
+            background-color:#CD5C5C; 
+            padding: 200px;
+            margin-top: 200px; /* Move the second section down by 200px */
+        }
+		
+		
+		.box {
+      border: 5px solid #ccc;
+      padding: 10px;
+      margin: 10px;
+      text-align: center;
+      box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1);
+	   max-width: 200%;
+    }
+
+    .box img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 15px;
+    }
+
+
+.box:hover {
+      transform: scale(1.05); /* Scale up the box on hover */
+    }
+
+    .box img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 15px;
+    }
+
+    .box h3, .box p {
+      transition: color 0.3s ease; /* Add transition for text color change on hover */
+    }
+
+    .box:hover h3, .box:hover p {
+      color: white; /* Change text color on hover */
+    }
+	
+	
+.custom-image {
+    max-width: 300%;
+    height: 50%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Increase the third parameter (20px) for a more pronounced shadow */
+    margin-top: 60px;
+    margin-left: -30px;
+}
+
+
+
+        .feature {
+            margin-top: 20px;
+			
+        }
+		  .heading-text {
+            font-size: 60px;
+            font-weight: bold;
+            margin-bottom: 20px;
+			font-family:Penna;
+        }
+	
+		.pricing-section {
+    background-color: #F2F2F2;
+    padding: 250px;
+    margin-top: -300px;
+}
+
+.pricing-section h2 {
+    color: #333;
+	margin-top: -100px;
+	font-family: penna;
+	font-size:70px;
+}
+.pricing-section .box {
+    border: 1px solid yellow;
+    padding: 15px;
+    margin: 20px 0;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Visible box shadow */
+}
+
+.pricing-section .box h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.pricing-section .box p {
+    font-size: 16px;
+    color: #888;
+}
+
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="https://logo.com/image-cdn/images/kts928pd/production/7b2f373fc1d56b123f04f428f8ae96a1522f820f-398x401.png?w=1080&q=72" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Courses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about_us.html">About</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Register.html">Sign Up</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- First Section -->
+    <section class="container mt-5">
+        <div class="row">
+            <div class="col-md-6 mt-5">
+                <div class="course-info">
+                    <h1>Best Online Education Expertise</h1>
+                    <p>Amet facilisi phasellus lacus, sit massa, erat placerat aenean aliquet ultrices eleifend enim enim lacus elit.</p>
+                    <div class="course-buttons">
+                        <a href="#" class="btn btn-primary">
+                            GET STARTED
+                            <span>&#8594;</span>
+                        </a>
+                        <a href="#" class="btn btn-outline-dark">View All Courses</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mt-5">
+                <img src="https://images.prismic.io/thinkific/7df66a5b-4686-4dcf-a449-86a62092f071_market-sell-2.webp?auto=compress,format&rect=0,0,2836,1854&w=650&h=425" alt="Course Image" class="course-image">
+            </div>
+        </div>
+    </section>
+
+    <section class="second-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <!-- Image at the Top, moved a bit to the left -->
+                <img src="https://images.prismic.io/thinkific/fb9e1ad3-4a51-48df-aff7-2ab7272062f9_tcommerce-hero.png?auto=compress,format" alt="Top Image" class="img-fluid mb-4">
+				 
+	        </div>
+            <div class="col-md-6 offset-md-1">
+                <!-- Text on the Right -->
+                <div class="text-container">
+                    <h2>TECHNOLOGIES YOU WILL LEARN</h2>
+					 <div class="col-md-6 mt-5">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwrNZXLxQwoVsBXjCsTWlcp4RURYCmwW92YA&usqp=CAU" alt="Course Image" class="course-image">
+            </div>
+                <div class="col-md-6 mt-5">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcST2A-KdF7ie_Kq4pONcWuo5OeIGBOUWEi68s-75dCr1LmG8lvXQyV8sajrlUZZ7kFK9mI&usqp=CAU" alt="Course Image" class="course-image">
+            </div> 
+
+
+
+			
+            </div>
+        </div>
+    </div>
+	
+	<!-- Third Section -->
+<section class="third-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Top Categories</h2>
+            </div>
+            <div class="col-md-6">
+                <h3>Popular Courses</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+                <a href="#" class="btn btn-primary">View All Courses</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+</section>
+
+
+<!-- Fourth Section -->
+<section class="fourth-section" style="margin-top: 100px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Image on the Left -->
+                <img src="web.png.webp" alt="Course Image" class="img-fluid mb-4">
+            </div>
+            <div class="col-md-6">
+                <h2><strong>FEATURED COURSE</strong></h2>
+                <h3><strong>Getting Started With Python 3 for Beginner</strong></h3>
+                <p><strong>Nibh enim nisi amet et nunc varius facilisis nulla non urna pulvinar felis, faucibus id placerat.</strong></p>
+                <ul>
+                    <li><strong>Fundamental</strong></li>
+                    <li><strong>Input and output</strong></li>
+                    <li><strong>Conditional branching</strong></li>
+                    <li><strong>8+ more lessons</strong></li>
+                </ul>
+                <a href="#" class="btn btn-primary">Start Course</a>
+            </div>
+        </div>
+    </div>
+	
+	
+	
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+      <div class="box">
+        <img src="https://web-cdn.freshlearn.com/website/online-courses.png" alt="Front End Image">
+        <h3>FRONT END</h3>
+        <p>HTML 5 Web Component Fundamentals</p>
+        <p>Beginner</p>
+        <p>2h 24m</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="box">
+        <img src="https://prismic-main.cdn.prismic.io/prismic-main/6582fec0531ac2845a26d1f2_illu-1-.svg?auto=compress,format" alt="Back End Image">
+        <h3>BACK END</h3>
+        <p>Node.js Basics</p>
+        <p>Intermediate</p>
+        <p>3h 12m</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="box">
+        <img src="https://trainingindustry.com/content/uploads/2018/07/Converting-Instructor-Led-Training-to-E-Learning-7.24.18.jpg" alt="Database Image">
+        <h3>DATABASE</h3>
+        <p>Introduction to SQL</p>
+        <p>Beginner</p> <p>1h 45m</p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+
+
+<section class="container my-5" style="background-color: light gray;">
+    <div class="row">
+        <!-- Content Column -->
+        <div class="col-md-12 custom-image-container">
+            <h2 class="heading-text"> Wondering What You Get?</h2>
+<h2 class ="heading-text">			Features & Benefits</h2>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Image Column -->
+        <div class="col-md-6">
+            <img src="https://images.ctfassets.net/19dvw6heztyg/4iy04nX4tFT8MKVHS7mSnj/806dd1d7ceec06372b9e1e1a812bfff2/home-website_builder-hero.png?w=1440&q=75" class="img-fluid custom-image" alt="Custom Design Image">
+        </div>
+        <!-- Content Column -->
+        <div class="col-md-6">
+            <!-- Feature 01 -->
+            <div class="feature box">
+                <h3>01. Custom Design</h3>
+                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis.</p>
+            </div>
+            <!-- Feature 02 -->
+            <div class="feature box">
+                <h3>02. Easy To Edit</h3>
+                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis.</p>
+            </div>
+            <!-- Feature 03 -->
+            <div class="feature box">
+                <h3>03. Mobile Responsive</h3>
+                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis.</p>
+            </div>
+            <!-- Feature 04 -->
+            <div class="feature box">
+                <h3>04. Strategic Analysis</h3>
+                <p>Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+<section class="pricing-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h2>Pricing & Packages</h2>
+                <p>Choose the plan that suits your needs</p>
+            </div>
+        </div>
+        <!-- ... add your pricing content here ... -->
+    </div>
+	
+	
+	<div class="row">
+            <!-- Box 1 -->
+            <div class="col-md-4">
+                <div class="box">
+                    <h3>Basic Plan</h3>
+                    <p>Access to a limited number of courses</p>
+                    <p>Basic support</p>
+                    <p>Price: $19.99/month</p>
+                </div>
+            </div>
+	
+	
+	<div class="col-md-4">
+                <div class="box">
+                    <h3>Standard Plan</h3>
+                    <p>Access to a wide range of courses</p>
+                    <p>Priority support</p>
+                    <p>Price: $29.99/month</p>
+                </div>
+            </div>
+	
+	
+	
+	
+	 <div class="col-md-4">
+                <div class="box">
+                    <h3>Premium Plan</h3>
+                    <p>Unlimited access to all courses</p>
+                    <p>Premium support</p>
+                    <p>Price: $49.99/month</p>
+                </div>
+            </div>lls
+        
+	
+	</section>
+
+  footer>
+
+<div style="height:300px; width:100%; background-color:black; color:white; position:sticky;"> 
+<br>
+<br>
+
+<center>
+<img src="hubspot-logo.png" alt="www icon" width="" height="60" style="vertical-align:middle">
+
+
+<p style="font-size:15px";>   
+ Copyright @ 2023 HubSpot,inc.
+ <br>
+
+ </p>
+ <p style="font-size:20px;"> 
+ 
+<u>Legal Stuff </u>| <u>Prvacy Policy </u> | <u> Security </u>
+</p>
+</center>
+</div>
+
+</footer>
+
+
+
+
+
+
+<!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
+
